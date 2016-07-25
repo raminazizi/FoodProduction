@@ -1,28 +1,41 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Full-stack CRUD Application
 
-Things you may want to cover:
+* Technologies used:
 
-* Ruby version
+    - Ruby on Rails.
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation (Heroku/ Postgresql)
 
-* Database initialization
+* -T test suite
 
-* How to run the test suite
+* Deployment/installation instructions
 
-* Services (job queues, cache servers, search engines, etc.)
+* Trello board
 
-* Deployment instructions
+* Overview:
+  - MVP
+    - Create an app that manages the inner backend of a food production facility.
+    - Need to have a repository of all the items with their yield, price, calories.
+    - Need to have a repository for all the menu.
+    - Need to have a view for pricing only.
+    - Need to have a view for all the recipe with all the columns.
+    - Need to have a view for purchasing.
+    - Need to have a view for purchasing.
+    - Need to have a view for weekly production totals
+    - Private view per user
 
-* ...
+  - Stretch Goals
+    - Need to be able to easily update the field entries
+* ERB:
+    - Add diagram here.
 
+* Approach taken.
+    Installation/startup instructions (this will be a little more complicated than with project 1!).
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Unsolved problems and next steps.

@@ -2,16 +2,36 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @recipe.name %>
-  <br>
-  <% @recipe.recipeitems.each do |r| %>
-  <%= r.item.name %>
-  <%= r.amount %>
-  <%= r.unit %>
-  <br>
-  <% end %>
+  <%= @recipe.name %> | <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Unit</th>
+        <th>Yield</th>
+        <th>Calorie</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-</p>
+    <tbody>
+      <% @recipe.recipeitems.each do |r| %>
+      <tr>
+        <td><%= r.item.name %></td>
+        <td><%= r.amount %>
+        <%= link_to 'Edit', edit_recipe_recipeitem_path(@recipe, r) %></td>
+        <td><%= r.unit %></td>
+        <td><%= r.item.yield %></td>
+        <td><%= r.item.calorie %></td>
+        <br>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Add', new_recipe_recipeitem_path(@recipe) %>
+  <hr>
 <%= link_to 'Back', recipes_path %>
+<%= link_to 'See all items', items_path %>
+</p>
