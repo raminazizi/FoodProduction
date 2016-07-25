@@ -22,7 +22,7 @@
         <td><%= recipeitem.unit %></td>
       </tr>
       <td><%= link_to 'Edit', edit_recipeitem_path(recipeitem) %></td>
-      <td><%= link_to 'Destroy', recipeitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', recipeitem_path(recipeitem), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
     <% end %>
   </tbody>

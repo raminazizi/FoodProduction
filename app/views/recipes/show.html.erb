@@ -20,7 +20,9 @@
       <tr>
         <td><%= r.item.name %></td>
         <td><%= r.amount %>
-        <%= link_to 'Edit', edit_recipe_recipeitem_path(@recipe, r) %></td>
+        <%= link_to 'Edit', edit_recipe_recipeitem_path(@recipe, r) %>
+        <%= link_to 'Delete', recipe_recipeitem_path(@recipe, r), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
         <td><%= r.unit %></td>
         <td><%= r.item.yield %></td>
         <td><%= r.item.calorie %></td>
