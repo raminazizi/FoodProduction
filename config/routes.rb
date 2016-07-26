@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resources :recipeitems
-    resources :purchasings
   end
   root 'welcome#index'
   #Item Routes
