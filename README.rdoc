@@ -40,3 +40,11 @@ Full-stack CRUD Application
     Installation/startup instructions (this will be a little more complicated than with project 1!).
 
 * Unsolved problems and next steps.
+
+------------------Assets----------------
+ERB:
+![ERB_final](other/ERB_final.png)
+Wireframes:
+![Wireframe_for_show](other/Wireframe_for_show.png)
+![Wireframe_welcome_landing](other/Wireframe_welcome_landing.png)
+![Other/Items_wireframe.png](other/Other/Items_wireframe.png.png)

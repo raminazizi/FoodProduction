@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  
+
   resources :recipes do
     resources :recipeitems
+    resources :purchasings
   end
   root 'welcome#index'
   #Item Routes
