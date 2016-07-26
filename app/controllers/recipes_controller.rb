@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
   def index
 # Show only recipes that belong to the current user:
     @recipes = current_user.recipes
+
     # @recipes = Recipe.all
   end
 # GET /recipes/1.json
