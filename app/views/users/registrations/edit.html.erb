@@ -18,6 +18,19 @@
   <div class="field">
     <%= f.label :lname, "Last Name" %><br />
     <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :companyname, "Company Name" %><br />
+    <%= f.text_field :companyname %>
+  </div>
+  <div class="field">
+    <%= f.label :companywebsite, "Company Website" %><br />
+    <%= f.text_field :companywebsite %>
+  </div>
+  <div class="field">
+    <%= f.label :img_url, "Company logo" %><br />
+    <%= f.text_field :img_url %>
+  </div>
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>

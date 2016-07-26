@@ -32,6 +32,7 @@ Full-stack CRUD Application
 
   - Stretch Goals
     - Need to be able to easily update the field entries
+    - Change logo url to upload
 * ERB:
     - Add diagram here.
 
