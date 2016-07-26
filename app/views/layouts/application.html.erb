@@ -23,6 +23,15 @@
 <% end %>
 
 <nav class= "navbar navbar-inverse">
+  <div class="navbar-text navbar-left">
+    <button class="btn-group btn-group-sm" aria-label="Delete">
+      <%= link_to 'See all items', items_path %>
+    </button>
+    <button class="btn-group btn-group-sm" aria-label="Delete">
+      <%= link_to 'See all recipes', recipes_path %>
+    </button>
+  </div>
+
   <div class="navbar-text navbar-right">
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
