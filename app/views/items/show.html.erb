@@ -19,5 +19,11 @@
   <%= @item.calorie %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'See all items', items_path %>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active">
+    <%= link_to 'Edit', edit_item_path(@item) %> |
+  </li>
+  <li role="presentation" >
+    <%= link_to 'See all items', items_path %>
+  </li>
+</ul>

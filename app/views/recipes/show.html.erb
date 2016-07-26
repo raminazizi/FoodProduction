@@ -1,11 +1,15 @@
-
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %> | <%= link_to 'Edit', edit_recipe_path(@recipe) %>
-  <table>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong>Name:</strong>
+    <%= @recipe.name %> |
+    <button class="btn-group btn-group-sm" aria-label="Delete">
+      <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+    </button>
+  </div>
+  <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Item Name</th>
         <th>Amount</th>
         <th>Unit</th>
         <th>Yield</th>
@@ -17,10 +21,16 @@
     <tbody>
       <% @recipe.recipeitems.each do |r| %>
       <tr>
-        <td><%= r.item.name %></td>
+        <td>
+          <button class="btn-group btn-group-sm" aria-label="Delete">
+            <%= link_to 'Delete', recipe_recipeitem_path(@recipe, r), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </button>
+          <%= r.item.name %>
+        </td>
         <td><%= r.amount %>
-        <%= link_to 'Edit', edit_recipe_recipeitem_path(@recipe, r) %>
-        <%= link_to 'Delete', recipe_recipeitem_path(@recipe, r), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <button class="btn-group btn-group-sm" aria-label="Delete">
+            <%= link_to 'Edit', edit_recipe_recipeitem_path(@recipe, r) %>
+          </button>
         </td>
         <td><%= r.unit %></td>
         <td><%= r.item.yield %></td>
@@ -30,9 +40,16 @@
       <% end %>
     </tbody>
   </table>
-
-<%= link_to 'Add', new_recipe_recipeitem_path(@recipe) %>
+</div>
+  <button class="btn-group btn-group-sm" aria-label="Delete">
+    <%= link_to 'Add new item', new_recipe_recipeitem_path(@recipe) %>
+  </button>
   <hr>
-<%= link_to 'Back', recipes_path %>
-<%= link_to 'See all items', items_path %>
-</p>
+  <ul class="nav nav-pills">
+    <li role="presentation" class="active">
+      <%= link_to 'Back', recipes_path %>
+    </li>
+    <li role="presentation" >
+      <%= link_to 'See all items', items_path %>
+    </li>
+  </ul>

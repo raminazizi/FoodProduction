@@ -1,7 +1,7 @@
 
 <h1>Listing Items</h1>
 
-<table class="table-striped">
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -28,6 +28,11 @@
 </table>
 
 <br>
-
-<%= link_to 'New Item', new_item_path %>
-<%= link_to 'See all recipes', recipes_path %>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active">
+    <%= link_to 'New Item', new_item_path %>
+  </li>
+  <li role="presentation" >
+    <%= link_to 'See all recipes', recipes_path %>
+  </li>
+</ul>

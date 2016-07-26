@@ -1,5 +1,10 @@
 <strong>Hi I am the welcome</strong>
 <br>
-<%= link_to 'See all items', items_path %>
-<br>
-<%= link_to 'See all recipes', recipes_path %>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active">
+    <%= link_to 'See all items', items_path %>
+  </li>
+  <li role="presentation">
+    <%= link_to 'See all recipes', recipes_path %>
+  </li>
+</ul>
