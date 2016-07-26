@@ -3,7 +3,10 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 # GET /recipes
   def index
-    @recipes = Recipe.all
+# Show only recipes that belong to the current user:
+    @recipes = current_user.recipes
+
+    # @recipes = Recipe.all
   end
 # GET /recipes/1.json
   def show
@@ -19,7 +22,8 @@ class RecipesController < ApplicationController
 # POST /recipes
   def create
     @recipe = Recipe.new(recipe_params)
-
+    # This new recipe belongs_to the user that created it:
+    @recipe.user_id = current_user.id
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recip was successfully created.' }
