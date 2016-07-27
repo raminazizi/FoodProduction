@@ -12,13 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :recipe_id%><br>
-    <%= f.text_field :recipe_id %>
+    <%= f.label :recipe %><br>
+    <%= f.collection_select(:recipe_id, @recipes, :id, :name) %>
   </div>
-  <div class="field">
-    <%= f.label :purchasing_id %><br>
-    <%= f.text_field :purchasing_id %>
-  </div>
+
   <div class="field">
     <%= f.label :production %><br>
     <%= f.number_field :production %>

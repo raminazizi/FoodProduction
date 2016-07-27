@@ -28,11 +28,9 @@ class RecipepurchasingsController < ApplicationController
 
     respond_to do |format|
       if @recipepurchasing.save
-        format.html { redirect_to purchasing_recipepurchasing_path(@purchasing, @recipepurchasing), notice: 'Recipepurchasing was successfully created.' }
-        format.json { render :show, status: :created, location: @recipepurchasing }
+        format.html { redirect_to @purchasing, notice: 'Recipepurchasing was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @recipepurchasing.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,7 +40,7 @@ class RecipepurchasingsController < ApplicationController
   def update
     respond_to do |format|
       if @recipepurchasing.update(recipepurchasing_params)
-        format.html { redirect_to @recipepurchasing, notice: 'Recipepurchasing was successfully updated.' }
+        format.html { redirect_to @purchasing, notice: 'Recipepurchasing was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipepurchasing }
       else
         format.html { render :edit }
@@ -56,7 +54,7 @@ class RecipepurchasingsController < ApplicationController
   def destroy
     @recipepurchasing.destroy
     respond_to do |format|
-      format.html { redirect_to recipepurchasings_url, notice: 'Recipepurchasing was successfully destroyed.' }
+      format.html { redirect_to @purchasing, notice: 'Recipepurchasing was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
