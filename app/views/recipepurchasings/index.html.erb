@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recipepurchasings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>Purchasing</th>
+      <th>Production</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipepurchasings.each do |recipepurchasing| %>
+      <tr>
+        <td><%= recipepurchasing.recipe_id %></td>
+        <td><%= recipepurchasing.purchasing_id %></td>
+        <td><%= recipepurchasing.production %></td>
+        <td><%= link_to 'Show', purchasing_recipepurchasing_path(@purchasing, recipepurchasing) %></td>
+        <td><%= link_to 'Edit', edit_purchasing_recipepurchasing_path(@purchasing, recipepurchasing) %></td>
+        <td><%= link_to 'Destroy', purchasing_recipepurchasing_path(@purchasing, recipepurchasing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

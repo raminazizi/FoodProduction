@@ -1,0 +1,1 @@
+json.partial! "recipepurchasings/recipepurchasing", recipepurchasing: @recipepurchasing

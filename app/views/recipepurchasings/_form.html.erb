@@ -1,0 +1,29 @@
+<%= form_for(@recipepurchasing) do |f| %>
+  <% if @recipepurchasing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipepurchasing.errors.count, "error") %> prohibited this recipepurchasing from being saved:</h2>
+
+      <ul>
+      <% @recipepurchasing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :recipe_id_id %><br>
+    <%= f.text_field :recipe_id_id %>
+  </div>
+  <div class="field">
+    <%= f.label :purchasing_id_id %><br>
+    <%= f.text_field :purchasing_id_id %>
+  </div>
+  <div class="field">
+    <%= f.label :production %><br>
+    <%= f.number_field :production %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

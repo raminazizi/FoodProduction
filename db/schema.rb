@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726032606) do
+ActiveRecord::Schema.define(version: 20160727162550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20160726032606) do
     t.float    "yield"
     t.float    "price"
     t.integer  "calorie"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchasing_orders", force: :cascade do |t|
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchasings", force: :cascade do |t|
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +48,28 @@ ActiveRecord::Schema.define(version: 20160726032606) do
 
   add_index "recipeitems", ["item_id"], name: "index_recipeitems_on_item_id", using: :btree
   add_index "recipeitems", ["recipe_id"], name: "index_recipeitems_on_recipe_id", using: :btree
+
+  create_table "recipepos", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "purchasing_order_id"
+    t.integer  "production"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "recipepos", ["purchasing_order_id"], name: "index_recipepos_on_purchasing_order_id", using: :btree
+  add_index "recipepos", ["recipe_id"], name: "index_recipepos_on_recipe_id", using: :btree
+
+  create_table "recipepurchasings", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "purchasing_id"
+    t.integer  "production"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "recipepurchasings", ["purchasing_id"], name: "index_recipepurchasings_on_purchasing_id", using: :btree
+  add_index "recipepurchasings", ["recipe_id"], name: "index_recipepurchasings_on_recipe_id", using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
@@ -70,4 +104,8 @@ ActiveRecord::Schema.define(version: 20160726032606) do
 
   add_foreign_key "recipeitems", "items"
   add_foreign_key "recipeitems", "recipes"
+  add_foreign_key "recipepos", "purchasing_orders"
+  add_foreign_key "recipepos", "recipes"
+  add_foreign_key "recipepurchasings", "purchasings"
+  add_foreign_key "recipepurchasings", "recipes"
 end

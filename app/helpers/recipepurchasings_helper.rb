@@ -1,0 +1,2 @@
+module RecipepurchasingsHelper
+end

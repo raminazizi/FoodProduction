@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @recipepurchasing.recipe_id %>
+</p>
+
+<p>
+  <strong>Purchasing:</strong>
+  <%= @recipepurchasing.purchasing_id %>
+</p>
+
+<p>
+  <strong>Production:</strong>
+  <%= @recipepurchasing.production %>
+</p>
+
+<%= link_to 'Edit', edit_recipepurchasing_path(@recipepurchasing) %> |
+<%= link_to 'Back', recipepurchasings_path %>

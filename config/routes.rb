@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :purchasings do
+    resources :recipepurchasings
+  end
+
   resources :recipes do
     resources :recipeitems
   end
