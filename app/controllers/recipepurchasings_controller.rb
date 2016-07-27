@@ -15,9 +15,8 @@ class RecipepurchasingsController < ApplicationController
   # GET /recipepurchasings/new
   def new
     @recipes = Recipe.all.order(:name)
-    @recipepurchasing = @purchasing.recipepurchasing.new
+    @recipepurchasing = @purchasing.recipepurchasings.new
   end
-
   # GET /recipepurchasings/1/edit
   def edit
   end
@@ -25,11 +24,11 @@ class RecipepurchasingsController < ApplicationController
   # POST /recipepurchasings
   # POST /recipepurchasings.json
   def create
-    @recipepurchasing = Purchasing.recipepurchasing.new(recipepurchasing_params)
+    @recipepurchasing = @purchasing.recipepurchasings.new(recipepurchasing_params)
 
     respond_to do |format|
       if @recipepurchasing.save
-        format.html { redirect_to @recipepurchasing, notice: 'Recipepurchasing was successfully created.' }
+        format.html { redirect_to purchasing_recipepurchasing_path(@purchasing, @recipepurchasing), notice: 'Recipepurchasing was successfully created.' }
         format.json { render :show, status: :created, location: @recipepurchasing }
       else
         format.html { render :new }
@@ -72,6 +71,6 @@ class RecipepurchasingsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipepurchasing_params
-      params.require(:recipepurchasing).permit(:recipe_id_id, :purchasing_id_id, :production)
+      params.require(:recipepurchasing).permit(:recipe_id, :purchasing_id, :production)
     end
 end

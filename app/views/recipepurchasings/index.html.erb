@@ -15,8 +15,8 @@
   <tbody>
     <% @recipepurchasings.each do |recipepurchasing| %>
       <tr>
-        <td><%= recipepurchasing.recipe_id %></td>
-        <td><%= recipepurchasing.purchasing_id %></td>
+        <td><%= recipepurchasing.recipe.name %></td>
+        <td><%= recipepurchasing.purchasing.date %></td>
         <td><%= recipepurchasing.production %></td>
         <td><%= link_to 'Show', purchasing_recipepurchasing_path(@purchasing, recipepurchasing) %></td>
         <td><%= link_to 'Edit', edit_purchasing_recipepurchasing_path(@purchasing, recipepurchasing) %></td>

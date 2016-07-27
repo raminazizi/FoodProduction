@@ -1,1 +1,0 @@
-json.array! @recipepurchasings, partial: 'recipepurchasings/recipepurchasing', as: :recipepurchasing
