@@ -42,14 +42,15 @@
           <ul class="nav navbar-nav navbar-inverse">
             <li>
               <% if user_signed_in? %>
-              Logged in as <strong><%= current_user.email %></strong>
-
               <button class="btn-group btn-group-sm" aria-label="Delete">
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
               </button>
               <button class="btn-group btn-group-sm" aria-label="Delete">
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
               </button>
+              <hr>
+              Logged in as <strong><%= current_user.email %></strong>
+
                 <% else %>
               <button class="btn-group btn-group-sm" aria-label="Delete">
                 <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
@@ -57,7 +58,6 @@
               <button class="btn-group btn-group-sm" aria-label="Delete">
                 <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %> <% end %>
               </button>
-              <hr>
               <p>
               </p>
               <hr>
@@ -67,7 +67,7 @@
             </li>
             <li class="whitetext">
               <%= link_to 'My Recipes', recipes_path %>
-          
+
             </li>
             <li class="whitetext">
               <%= link_to 'Purchase Orders', purchasings_path %>
