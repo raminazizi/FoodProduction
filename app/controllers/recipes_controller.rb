@@ -9,7 +9,18 @@ class RecipesController < ApplicationController
     # @recipes = Recipe.all
   end
   def show
+    if params[:is_buyer]
+    @is_buyer= true
+
+    end
+
   end
+
+  def show_price
+    @recipe = Recipe.find(params[:id])
+    redirect_to show_price_path
+  end
+
   def new
     @recipe = Recipe.new
   end
