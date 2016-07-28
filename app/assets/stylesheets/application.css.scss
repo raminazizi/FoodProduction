@@ -24,7 +24,7 @@
 }
 .sidebar-nav ul{
   height: 100vh;
-  background: black;
+  background: #4d4d4d;
 }
 /* make sidebar nav vertical */
 @media (min-width: 768px) {
@@ -44,12 +44,14 @@
     padding-top: 12px;
     padding-bottom: 12px;
   }
+  .navbar-default .navbar-nav > li > a {
+    color: white;
+  }
 }
 
 .navbar-inverse li {
   color: white;
 }
-
-.whitetext{
-  color: white;
+.navbar-inverse .navbar-link {
+    color: white;
 }

@@ -42,20 +42,21 @@
           <ul class="nav navbar-nav navbar-inverse">
             <li>
               <% if user_signed_in? %>
-              <button class="btn-group btn-group-sm" aria-label="Delete">
+              <button type="button" class="btn btn-outline-primary">
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
               </button>
-              <button class="btn-group btn-group-sm" aria-label="Delete">
+              <button type="button" class="btn btn-outline-primary">
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
               </button>
               <hr>
               Logged in as <strong><%= current_user.email %></strong>
 
                 <% else %>
-              <button class="btn-group btn-group-sm" aria-label="Delete">
-                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+              <button <button type="button" class="btn btn-primary btn-lg btn-block">
+                <%= link_to "Sign up for Free", new_user_registration_path, :class => 'navbar-link' %>
               </button>
-              <button class="btn-group btn-group-sm" aria-label="Delete">
+                <br>
+              <button <button type="button" class="btn btn-primary btn-lg btn-block">
                 <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %> <% end %>
               </button>
               <p>
@@ -70,7 +71,7 @@
 
             </li>
             <li class="whitetext">
-              <%= link_to 'Purchase Orders', purchasings_path %>
+              <%= link_to 'Purchase Orders', purchasings_path, class:'whitetext' %>
             </li>
             <li class="whitetext">
               <a href="#">My Calorie Labels</a>
@@ -81,9 +82,7 @@
             <li class="whitetext">
               <a href="#">Schedule Staff</a>
             </li>
-            <li class="whitetext">
-              <a href="#">Reviews <span class="badge">1,118</span></a>
-            </li>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
