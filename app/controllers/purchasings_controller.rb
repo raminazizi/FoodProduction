@@ -1,31 +1,24 @@
 class PurchasingsController < ApplicationController
   before_action :set_purchasing, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
-  # GET /purchasings
-  # GET /purchasings.json
   def index
-    @purchasings = Purchasing.all
+    @purchasings = current_user.purchasings
   end
 
-  # GET /purchasings/1
-  # GET /purchasings/1.json
   def show
   end
 
-  # GET /purchasings/new
   def new
     @purchasing = Purchasing.new
   end
 
-  # GET /purchasings/1/edit
   def edit
   end
 
-  # POST /purchasings
-  # POST /purchasings.json
   def create
     @purchasing = Purchasing.new(purchasing_params)
-
+    @purchasing.user_id = current_user.id
     respond_to do |format|
       if @purchasing.save
         format.html { redirect_to @purchasing, notice: 'Purchasing was successfully created.' }
@@ -37,8 +30,6 @@ class PurchasingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /purchasings/1
-  # PATCH/PUT /purchasings/1.json
   def update
     respond_to do |format|
       if @purchasing.update(purchasing_params)
@@ -51,8 +42,6 @@ class PurchasingsController < ApplicationController
     end
   end
 
-  # DELETE /purchasings/1
-  # DELETE /purchasings/1.json
   def destroy
     @purchasing.destroy
     respond_to do |format|
@@ -62,12 +51,10 @@ class PurchasingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_purchasing
       @purchasing = Purchasing.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def purchasing_params
       params.require(:purchasing).permit(:date)
     end
