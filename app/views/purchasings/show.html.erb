@@ -40,11 +40,15 @@
 
   </tbody>
   <% end %>
-  <button class="btn-group btn-group-sm" aria-label="Delete">
-    <%= link_to 'Add new item', new_purchasing_recipepurchasing_path(@purchasing) %>
-  </button>
+
+  <button type="button" class="btn btn-info">Submit Order</button>
+  <hr>
 
   </table>
 
-
-<%= link_to 'Back', purchasings_path %>
+  <button type="button" class="btn btn-warning">
+    <%= link_to 'Add new item', new_purchasing_recipepurchasing_path(@purchasing) %>
+  </button>
+  <button type="button" >
+    <%= link_to 'Back', purchasings_path %>
+  </button>

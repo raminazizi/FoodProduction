@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
@@ -22,39 +23,77 @@
   </p>
 <% end %>
 
-<nav class= "navbar navbar-inverse">
-  <div class="navbar-text navbar-left">
-    <button class="btn-group btn-group-sm" aria-label="Delete">
-      <%= link_to 'See all items', items_path %>
-    </button>
-    <button class="btn-group btn-group-sm" aria-label="Delete">
-      <%= link_to 'See all recipes', recipes_path %>
-    </button>
-    <button class="btn-group btn-group-sm" aria-label="Delete">
-      <%= link_to 'See all Purchase Oreders', purchasings_path %>
-    </button>
+
+<div class="container navbar-left col-sm-3">
+<div class="row">
+  <div>
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav navbar-inverse">
+            <li>
+              <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>
+
+              <button class="btn-group btn-group-sm" aria-label="Delete">
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+              </button>
+              <button class="btn-group btn-group-sm" aria-label="Delete">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+              </button>
+                <% else %>
+              <button class="btn-group btn-group-sm" aria-label="Delete">
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+              </button>
+              <button class="btn-group btn-group-sm" aria-label="Delete">
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %> <% end %>
+              </button>
+              <hr>
+              <p>
+              </p>
+              <hr>
+            </li>
+            <li class="whitetext">
+              <%= link_to 'My Ingredients List', items_path %>
+            </li>
+            <li class="whitetext">
+              <%= link_to 'My Recipes', recipes_path %>
+          
+            </li>
+            <li class="whitetext">
+              <%= link_to 'Purchase Orders', purchasings_path %>
+            </li>
+            <li class="whitetext">
+              <a href="#">My Calorie Labels</a>
+            </li>
+            <li class="whitetext">
+              <a href="#">Buy a new recipe</a>
+            </li>
+            <li class="whitetext">
+              <a href="#">Schedule Staff</a>
+            </li>
+            <li class="whitetext">
+              <a href="#">Reviews <span class="badge">1,118</span></a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
   </div>
+</div>
+</div>
 
-  <div class="navbar-text navbar-right">
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-    <button class="btn-group btn-group-sm" aria-label="Delete">
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-    </button>
-    <button class="btn-group btn-group-sm" aria-label="Delete">
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-    </button>
-      <% else %>
-    <button class="btn-group btn-group-sm" aria-label="Delete">
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
-    </button>
-    <button class="btn-group btn-group-sm" aria-label="Delete">
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %> <% end %>
-    </button>
-  </div>
-</nav>
-
-<%= yield %>
-
+<div class="col-sm-9">
+  <%= yield %>
+</div>
 </body>
 </html>
