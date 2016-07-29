@@ -29,21 +29,53 @@ Ruby on Rails/ Devise/ Bootstrap/Postgresql/ Heroku
     - Private view per user
 
   - Stretch Goals
-    - Need to be able to easily update the field entries
-    - Change logo url to upload
-* ERB:
-    - Add diagram here.
+    - Create purchase order models
+    - Set email communications
+    - Create calories counter
+    - Estimate recipe pricing
 
-* Approach taken.
-    Installation/startup instructions (this will be a little more complicated than with project 1!).
 
-* Unsolved problems and next steps.
+* Installation/startup instructions:
+  - Open the heroku link:https://foodproduction.herokuapp.com/
 
+* Unsolved problems:
+  Website Email communications
+
+
+* Approach taken:
+    - $ rails new Project2 -T -d postgresql
+    - GitHub. /    $ git commit -m “first setup"
+    - $rake db:create   $rake db:migrate
+    - Generating the models for database rails g model Item name:string, yield: float, price: float, calorie:integer
+    - Verify database relationships: $ rails c
+    - Create Controller and CRUD:class RecipesController < ApplicationController  before_action :set_recipetest, only: [:show, :edit, :update, :destroy]
+    - Create views for models. (_form, edit, index, new, show)
+    - Create routes for controller CRUD actions    resources :recipes /  resources :items
+    - rails s; check routes
+    - Created nested routes $ rake routes
+    - Added edit/delete functions to recipe show so you can modify recipeitem join table
+    - Updated ERB and added user model
+    - Installed Devise gem and generated the models and views.
+    - Restricted the controller to show the Recipes for only the current_user
+    - Added Bootstrap Gem
+    - Added Heroku and connected the remote
+    - Created a few layout views
+    - Created purchasing views and controller
 ------------------Assets----------------
 ERB:
+class Recipeitem
+  belongs_to :recipe
+  belongs_to :item
+end
+class Recipepurchasing
+  belongs_to :recipe
+  belongs_to :purchasing
+end
 
 ![proj2ERB](https://cloud.githubusercontent.com/assets/9585948/17238535/524b0384-5511-11e6-8027-75f2aec90f70.png)
+
+
 Wireframes:
-![Wireframe_for_show](other/Wireframe_for_show.png)
-![Wireframe_welcome_landing](other/Wireframe_welcome_landing.png)
-![Items_wireframe](other/Items_wireframe.png.png)
+![Wireframe_for_show](https://cloud.githubusercontent.com/assets/9585948/17238533/52446fc4-5511-11e6-8704-cd50b3376e07.png)
+![Wireframe_welcome_landing](https://cloud.githubusercontent.com/assets/9585948/17238651/5362d200-5512-11e6-8c3b-172fb4ad3ced.png)
+![Items_wireframe](https://cloud.githubusercontent.com/assets/9585948/17238534/5246d6a6-5511-11e6-946f-676733fb1712.png)
