@@ -2,21 +2,19 @@
 
 Full-stack CRUD Application
 
+* Trello:
+https://trello.com/b/Iyi5fqSH/food-production
+
+* Heroku:
+https://foodproduction.herokuapp.com/
+
 * Technologies used:
 
-    - Ruby on Rails.
-
-* System dependencies
-
-* Configuration
-
-* Database creation (Heroku/ Postgresql)
+Ruby on Rails/ Devise/ Bootstrap/Postgresql/ Heroku
 
 * -T test suite
 
 * Deployment/installation instructions
-
-* Trello board
 
 * Overview:
   - MVP
@@ -43,8 +41,8 @@ Full-stack CRUD Application
 
 ------------------Assets----------------
 ERB:
-![ERB_final](other/ERB_final.png)
+![proj2ERB](/proj2ERB.png)
 Wireframes:
-![Wireframe_for_show](other/Wireframe_for_show.png)
-![Wireframe_welcome_landing](other/Wireframe_welcome_landing.png)
-![Other/Items_wireframe.png](other/Other/Items_wireframe.png.png)
+![Wireframe_for_show](/Wireframe_for_show.png)
+![Wireframe_welcome_landing](/Wireframe_welcome_landing.png)
+![Other/Items_wireframe.png](/Other/Items_wireframe.png.png)
