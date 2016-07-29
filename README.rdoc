@@ -41,7 +41,8 @@ Ruby on Rails/ Devise/ Bootstrap/Postgresql/ Heroku
 
 ------------------Assets----------------
 ERB:
-![proj2ERB](other/proj2ERB.png)
+
+![proj2ERB](https://cloud.githubusercontent.com/assets/9585948/17238535/524b0384-5511-11e6-8027-75f2aec90f70.png)
 Wireframes:
 ![Wireframe_for_show](other/Wireframe_for_show.png)
 ![Wireframe_welcome_landing](other/Wireframe_welcome_landing.png)
