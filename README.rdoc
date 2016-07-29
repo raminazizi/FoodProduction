@@ -72,10 +72,10 @@ class Recipepurchasing
   belongs_to :purchasing
 end
 
-![proj2ERB](https://cloud.githubusercontent.com/assets/9585948/17238535/524b0384-5511-11e6-8027-75f2aec90f70.png)
+(https://cloud.githubusercontent.com/assets/9585948/17238535/524b0384-5511-11e6-8027-75f2aec90f70.png)
 
 
 Wireframes:
-![Wireframe_for_show](https://cloud.githubusercontent.com/assets/9585948/17238533/52446fc4-5511-11e6-8704-cd50b3376e07.png)
-![Wireframe_welcome_landing](https://cloud.githubusercontent.com/assets/9585948/17238651/5362d200-5512-11e6-8c3b-172fb4ad3ced.png)
-![Items_wireframe](https://cloud.githubusercontent.com/assets/9585948/17238534/5246d6a6-5511-11e6-946f-676733fb1712.png)
+(https://cloud.githubusercontent.com/assets/9585948/17238533/52446fc4-5511-11e6-8704-cd50b3376e07.png)
+(https://cloud.githubusercontent.com/assets/9585948/17238651/5362d200-5512-11e6-8c3b-172fb4ad3ced.png)
+(https://cloud.githubusercontent.com/assets/9585948/17238534/5246d6a6-5511-11e6-946f-676733fb1712.png)

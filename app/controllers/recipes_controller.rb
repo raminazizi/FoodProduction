@@ -11,9 +11,6 @@ class RecipesController < ApplicationController
   def show
     if params[:is_buyer]
     @is_buyer= true
-
-    end
-
   end
 
   def show_price
